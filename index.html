@@ -334,7 +334,7 @@ let textlong3 =  'Michal Kurzal \n'+
 
 'Likewise, under Art. 21 GDPR, users and data subjects have the right to object to the controllers future processing of their data pursuant to Art. 6 Para. 1 lit. f) GDPR. In particular, an objection to data processing for the purpose of direct advertising is permissible.\n \n'+
 
-'II. Information about the data processing'+
+'II. Information about the data processing\n'+
 'I am a private person and I do not colect any data. Only host of this site - github - colect some data. Please inform yourself abut github privacy policy'
 const icontext1 = new PIXI.Text('My Knowledge', style2);
 const icontext2 = new PIXI.Text('About', style2);
@@ -555,7 +555,7 @@ let scroll = (event)=>{
 let clickV = ()=>{
     console.log(page1text3.y);
     let y = page1text3.y;
-    if(y> -400){
+    if(y> -500){
         gsap.to(page1text3, {y: y-150, duration:0.5});
     }
   
