@@ -123,7 +123,7 @@ const style5 = new PIXI.TextStyle({
 });
 
 let click = async ()=>{
-  
+    
     console.log('click');
     //back.height = window.innerHeight /2;
     TweenLite.set(back, {height:0});
@@ -144,6 +144,7 @@ let click = async ()=>{
     cont2.addChild(icon2);
     cont2.addChild(icon3);
     cont1.addChild(back2);
+  
 	site = 'main';
 	return   await site;
 }
@@ -324,7 +325,7 @@ richText.y =window.innerHeight/2;
 'I have also expiriences in mobile Ionic Apps Development. '+ 
 'My Hobbies are OpenGL and WebGL ';
 
- let textlong2 =  'In my twenties I have been studying Sociolgy and Political Science at the University but I did not finish and I do not have a higer degree. ' 
+ let textlong2 =  'In my twenties I have been studying Sociolgy and Political Science at the University but I did not finish and I do not have a higher degree. ' 
 + 'In the recent past  I have been doing professional apprentceship in the IT filed with focus on software develpment'
 
 let textlong3 =  'Michal Kurzal \n'+ 
@@ -586,6 +587,41 @@ let textup = ()=>{
     }
    
 }
+let media2 = () =>{
+    if (window.innerWidth < 800 && site == 'main'){
+    console.log(' not > 800');
+  
+    
+        console.log('Main');
+       
+        icon1.scale.x = 0.25;
+        icon1.scale.y = 0.25;
+
+        icon2.scale.x = 0.25;
+        icon2.scale.y = 0.25;
+
+        icon3.scale.x = 0.25;
+        icon3.scale.y = 0.25;
+
+        icon1.off('pointerover', ihover);
+icon1.off('pointerout', ihoverout);
+
+icon2.off('pointerover', ihover2);
+icon2.off('pointerout', ihoverout2);
+
+icon3.off('pointerover', ihover3);
+icon3.off('pointerout', ihoverout3);
+
+gsap.to(icon1, {y:100,x: 50, duration:2});
+    gsap.to(icon2, {y:500, x: 50, duration:2});
+    gsap.to(icon3, {y:300, x: 50, duration:2});
+    gsap.to(icontext1, {y:210, x: 50, duration:2});
+	gsap.to(icontext2, {y:610, x: 50, duration:2});
+	gsap.to(icontext3, {y:410, x: 50, duration:2});
+
+    
+  }
+}
 
 back.zIndex = 0;
 richText.zIndex =1;
@@ -594,7 +630,8 @@ icon2.on('pointerdown', iclick2);
 icon3.on('pointerdown', iclick3);
 icon1.on('pointerover', ihover);
 icon1.on('pointerout', ihoverout);
-
+back.on('pointerdown',media2);
+richText.on('pointerdown',media2);
 icon2.on('pointerover', ihover2);
 icon2.on('pointerout', ihoverout2);
 img1.on('pointerdown', getsite);
@@ -617,6 +654,8 @@ let count = 0;
 
 displacementFilter.scale.x = 30;
 displacementFilter.scale.y = 60;
+
+
 
 function Media() {
   if (window.innerWidth > 800 && site == 'main') { // If media query matches
