@@ -119,7 +119,7 @@ const style5 = new PIXI.TextStyle({
     dropShadowAngle: Math.PI / 6,
     dropShadowDistance: 6,
     wordWrap: true,
-    wordWrapWidth: 250,
+    wordWrapWidth: 320,
 });
 
 let click = async ()=>{
@@ -597,7 +597,7 @@ let scroll = (event)=>{
 let clickV = ()=>{
     console.log(page1text3.y);
     let y = page1text3.y;
-    if(y> -900){
+    if(y> -1200){
         gsap.to(page1text3, {y: y-150, duration:0.5});
     }
   
@@ -676,6 +676,15 @@ let media4 = ()=>{
     img2.scale.y = 0.4;
   }
 }
+
+let media5 = ()=> {
+    if (window.innerWidth < 800 && site == 'sub2'){
+      page1text3.style = style5;
+  }
+  else if (window.innerWidth > 800 && site == 'sub2'){
+    page1text3.style = style4;
+  }
+}
 back.zIndex = 0;
 richText.zIndex =1;
 icon1.on('pointerdown', iclick);
@@ -689,6 +698,7 @@ richText.on('pointerdown',media2);
 
 icon1.on('pointerdown', media3);
 icon3.on('pointerdown', media4);
+icon2.on('pointerdown', media5);
 
 icon2.on('pointerover', ihover2);
 icon2.on('pointerout', ihoverout2);
