@@ -41,7 +41,7 @@ let site = '';
 
 const style = new PIXI.TextStyle({
     fontFamily: 'Tahoma',
-    fontSize: 52,
+    fontSize: 32,
     fontStyle: 'normal',
     fontWeight: 'normal',
     fill: ['#000000'], 
@@ -53,7 +53,7 @@ const style = new PIXI.TextStyle({
     dropShadowAngle: Math.PI / 6,
     dropShadowDistance: 6,
     wordWrap: true,
-    wordWrapWidth: 550,
+    wordWrapWidth: 250,
 });
 const style2 = new PIXI.TextStyle({
     fontFamily: 'Tahoma',
@@ -104,6 +104,22 @@ const style4 = new PIXI.TextStyle({
     wordWrap: true,
     wordWrapWidth: width,
     padding	:20,
+});
+const style5 = new PIXI.TextStyle({
+    fontFamily: 'Tahoma',
+    fontSize: 18,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fill: ['#FDFEFE'], 
+    stroke: '#FDFEFE',
+    strokeThickness: 2,
+    dropShadow: false,
+    dropShadowColor: '#000000',
+    dropShadowBlur: 4,
+    dropShadowAngle: Math.PI / 6,
+    dropShadowDistance: 6,
+    wordWrap: true,
+    wordWrapWidth: 250,
 });
 
 let click = async ()=>{
@@ -628,7 +644,7 @@ icon3.on('pointerover', ihover3);
 icon3.on('pointerout', ihoverout3);
 
     
-  } else if (window.innerWidth < 800){
+  } else if (window.innerWidth < 800 && site == 'main'){
     console.log(' not > 800');
   
     
@@ -660,6 +676,30 @@ gsap.to(icon1, {y:100,x: 50, duration:2});
 	gsap.to(icontext3, {y:410, x: 50, duration:2});
 
     
+  }
+  else if (window.innerWidth < 800 && site == 'sub1'){
+    gsap.to(img1,{x:50, y:450, duration:2});
+page1text.style = style5;
+    img1.scale.x = 0.2;
+    img1.scale.y = 0.2;
+  }
+  else if (window.innerWidth > 800 && site == 'sub1'){
+    gsap.to(img1,{x:window.innerWidth/2, y:150, duration:2});
+    page1text.style = style3;
+    img1.scale.x = 0.4;
+    img1.scale.y = 0.4;
+  }
+  else if (window.innerWidth < 800 && site == 'sub3'){
+    gsap.to(img2,{x:50, y:450, duration:2});
+    page1text2.style = style5;
+    img2.scale.x = 0.2;
+    img2.scale.y = 0.2;
+  }
+  else if (window.innerWidth > 800 && site == 'sub3'){
+    gsap.to(img2,{x:window.innerWidth/2, y:150, duration:2});
+    page1text2.style = style3;
+    img2.scale.x = 0.4;
+    img2.scale.y = 0.4;
   }
 }
 
