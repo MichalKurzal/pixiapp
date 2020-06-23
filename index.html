@@ -144,7 +144,8 @@ let click = async ()=>{
     cont2.addChild(icon2);
     cont2.addChild(icon3);
     cont1.addChild(back2);
-  
+    richText.off('pointerdown',click);
+    richText.off('pointerdown',media2);
 	site = 'main';
 	return   await site;
 }
