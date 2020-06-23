@@ -152,6 +152,8 @@ let click = async ()=>{
 let iclick = async () =>{
   
     console.log('iclick');
+    let nav = navigator.userAgent;
+    console.log(nav);
     gsap.to(icon1, {x:window.innerWidth, duration:2});
     gsap.to(icon2, {x:window.innerWidth, duration:2});
     gsap.to(icon3, {x:window.innerWidth, duration:2});
@@ -172,9 +174,9 @@ let iclick = async () =>{
     TweenLite.from(back3, 1, {height:0});
     gsap.to(back3,{x:0, y:0, duration:2});
     cont2.addChild(img1);
-  
+    if (nav.match(/Windows/) || nav.match(/Linux/)){
     gsap.to(img1,{x:window.innerWidth/2, y:150, duration:2});
-
+    }
     cont2.addChild(iarrow);
     gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
 
@@ -456,10 +458,11 @@ cont1.buttonMode = true;
 
 cont2.interactive = true;
 cont2.buttonMode = true;
-
 back.interactive = true;
+
 richText.on('pointerdown', click);
 back.on('pointerdown',click );
+
 img1.interactive = true;
 
 cont1.filters = [ displacementFilter];
@@ -513,8 +516,16 @@ if (nav.match(/Android/) && site == 'sub1'){
                 console.log('sub3');
                 gsap.to(img2,{x:50, y:750, duration:2});
             }
-        
-    
+        else if (nav.match(/Android/))
+        {
+            icon1.off('pointerdown', media3);
+            icon3.off('pointerdown', media4);
+        }
+        else if (nav.match(/iPhone/))
+        {
+            icon1.off('pointerdown', media3);
+            icon3.off('pointerdown', media4);
+        }
         //console.log(navigator.userAgent);
        
     }
@@ -666,6 +677,7 @@ icon1.on('pointerout', ihoverout);
 
 back.on('pointerdown',media2);
 richText.on('pointerdown',media2);
+
 icon1.on('pointerdown', media3);
 icon3.on('pointerdown', media4);
 
