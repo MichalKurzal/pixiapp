@@ -134,9 +134,9 @@ let click = async ()=>{
     gsap.to(icon1, {y:window.innerHeight/2 -200, duration:2});
     gsap.to(icon2, {y:window.innerHeight/2 -200, duration:2});
     gsap.to(icon3, {y:window.innerHeight/2 -200, duration:2});
-    gsap.to(icontext1, {y:window.innerHeight/2 + 100, duration:2});
-	gsap.to(icontext2, {y:window.innerHeight/2 + 100, duration:2});
-	gsap.to(icontext3, {y:window.innerHeight/2 + 100, duration:2});
+    gsap.to(icontext1, {y:window.innerHeight/2 + 80, duration:2});
+	gsap.to(icontext2, {y:window.innerHeight/2 + 80, duration:2});
+	gsap.to(icontext3, {y:window.innerHeight/2 + 80, duration:2});
 	
     gsap.to(back2,{x:0, y:0, duration:2});
 
@@ -155,8 +155,8 @@ let iclick = async () =>{
     let nav = navigator.userAgent;
     console.log(nav);
     gsap.to(icon1, {x:window.innerWidth, duration:2});
-    gsap.to(icon2, {x:window.innerWidth, duration:2});
-    gsap.to(icon3, {x:window.innerWidth, duration:2});
+    gsap.to(icon2, {x:window.innerWidth, duration:1.5});
+    gsap.to(icon3, {x:window.innerWidth, duration:1});
 
     TweenLite.set(back2, {height:window.innerHeight });
     TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
@@ -364,7 +364,7 @@ const icontext1 = new PIXI.Text('My Knowledge', style2);
 const icontext2 = new PIXI.Text('About', style2);
 const icontext3 = new PIXI.Text('Education', style2);
 
-icontext1.x = 50;
+icontext1.x = 55;
 icontext1.y = window.innerHeight;
 
 icontext2.x = window.innerWidth - 250;
@@ -454,11 +454,20 @@ displacementSprite = PIXI.Sprite.fromImage('https://res.cloudinary.com/dvxikybyi
  cont1.addChild(back);
 cont1.addChild(displacementSprite);
 cont1.interactive = true;
-cont1.buttonMode = true;
-
 cont2.interactive = true;
-cont2.buttonMode = true;
 back.interactive = true;
+
+//cont1.buttonMode = true;
+//cont2.buttonMode = true;
+icon1.buttonMode = true;
+icon2.buttonMode = true;
+icon3.buttonMode = true;
+icontext1.buttonMode = true;
+icontext2.buttonMode = true;
+icontext3.buttonMode = true;
+iarrow.buttonMode = true;
+iarrow2.buttonMode = true;
+iarrow3.buttonMode = true;
 
 richText.on('pointerdown', click);
 back.on('pointerdown',click );
@@ -556,7 +565,7 @@ function res(){
     back.height = window.innerHeight;
   
 
-    if (site == 'main')
+    if (site == 'main' && window.innerWidth > 800)
     {
         console.log('Main');
         click();
@@ -756,12 +765,12 @@ icon2.off('pointerout', ihoverout2);
 icon3.off('pointerover', ihover3);
 icon3.off('pointerout', ihoverout3);
 
-gsap.to(icon1, {y:100,x: 50, duration:2});
-    gsap.to(icon2, {y:500, x: 50, duration:2});
-    gsap.to(icon3, {y:300, x: 50, duration:2});
-    gsap.to(icontext1, {y:210, x: 50, duration:2});
-	gsap.to(icontext2, {y:610, x: 50, duration:2});
-	gsap.to(icontext3, {y:410, x: 50, duration:2});
+gsap.to(icon1, {y:105,x: 70, duration:2});
+    gsap.to(icon2, {y:500, x: 70, duration:2});
+    gsap.to(icon3, {y:300, x: 70, duration:2});
+    gsap.to(icontext1, {y:230, x: 70, duration:2});
+	gsap.to(icontext2, {y:630, x: 70, duration:2});
+	gsap.to(icontext3, {y:430, x: 70, duration:2});
 
     
   }
