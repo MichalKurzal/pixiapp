@@ -259,7 +259,7 @@ let iclick3 = async () =>{
     is();
     return await   site;
 }
-let arrowback = ()=>{
+let arrowback = async()=>{
     console.log('arrow-back');
     TweenLite.set(back3, {height:0});
     TweenLite.from(back3, 1, {height:window.innerHeight});
@@ -282,6 +282,9 @@ let arrowback = ()=>{
     gsap.to(iarrow,{x:0, y:window.innerHeight , duration:2});
     gsap.to(iarrow2,{x:0, y:window.innerHeight , duration:2});
     gsap.to(iarrow3,{x:0, y:window.innerHeight , duration:2});
+    site = 'main';
+
+    return await   site;
 }
 let ihover =()=>{
     console.log('ihover');
