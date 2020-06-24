@@ -188,64 +188,51 @@ var page1text2 = new PIXI.Text(textlong2, style3);
 var page1text3 = new PIXI.Text(textlong3, style4);
 
 let click = async ()=>{
-    
     console.log('click');
-    //back.height = window.innerHeight /2;
+    richText.off('pointerdown',click);
+    richText.off('pointerdown',media2);
+    cont2.addChild(icon1);
+    cont2.addChild(icon2);
+    cont2.addChild(icon3);
+    cont1.addChild(back2);
+
     TweenLite.set(back, {height:0});
     TweenLite.from(back, 1, {height:window.innerHeight});
     TweenLite.set(back2, {height:window.innerHeight});
     TweenLite.from(back2, 1, {height:0});
     TweenLite.to(richText, 2,{ x:50, y:30});
-    gsap.to(icon1, {y:window.innerHeight/2 -200, duration:2});
-    gsap.to(icon2, {y:window.innerHeight/2 -200, duration:2});
-    gsap.to(icon3, {y:window.innerHeight/2 -200, duration:2});
-    gsap.to(icontext1, {y:window.innerHeight/2 + 80, duration:2});
-	gsap.to(icontext2, {y:window.innerHeight/2 + 80, duration:2});
-	gsap.to(icontext3, {y:window.innerHeight/2 + 80, duration:2});
-	
+
+    gsap.to([icon1,icon3,icon2], {y:window.innerHeight/2 -200, duration:1,stagger: 0.5});
+    gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight/2 + 80, duration:1, stagger:0.5});
     gsap.to(back2,{x:0, y:0, duration:2});
 
-    cont2.addChild(icon1);
-    cont2.addChild(icon2);
-    cont2.addChild(icon3);
-    cont1.addChild(back2);
-    richText.off('pointerdown',click);
-    richText.off('pointerdown',media2);
 	site = 'main';
 	return   await site;
 }
 let iclick = async () =>{
-  
-    console.log('iclick');
     let nav = navigator.userAgent;
+    console.log('iclick');
     console.log(nav);
-    gsap.to(icon1, {x:window.innerWidth, duration:2});
-    gsap.to(icon2, {x:window.innerWidth, duration:1.5});
-    gsap.to(icon3, {x:window.innerWidth, duration:1});
-
-    TweenLite.set(back2, {height:window.innerHeight });
-    TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
- 
-    gsap.to(icontext1, {x:window.innerWidth, duration:2});
-	gsap.to(icontext2, {x:window.innerWidth, duration:2});
-	gsap.to(icontext3, {x:window.innerWidth, duration:2});
-		
+    cont2.addChild(iarrow);
     cont2.addChild(page1text);
-    gsap.to(page1text,{x:50, y:150, duration:2});
+    cont2.addChild(img1);
     cont1.addChild(back3);
+
     TweenLite.set(back2, {height:0});
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
     TweenLite.from(back3, 1, {height:0});
+    TweenLite.set(back2, {height:window.innerHeight });
+    TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
+ 
+    gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight, duration:1,stagger:0.5});
+    gsap.to([icon1,icon3,icon2], {y:window.innerHeight, duration:1,stagger:0.5});
+    gsap.to(page1text,{x:50, y:150, duration:2});
     gsap.to(back3,{x:0, y:0, duration:2});
-    cont2.addChild(img1);
     if (nav.match(/Windows/) || nav.match(/Linux/)){
     gsap.to(img1,{x:window.innerWidth/2, y:150, duration:2});
     }
-    cont2.addChild(iarrow);
     gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
-
-    
    
     site = 'sub1';
     is();
@@ -253,75 +240,52 @@ let iclick = async () =>{
    return await site;
 };
 let iclick2 = async() =>{
-   
     console.log('iclick2');
-    gsap.to(icon1, {x:window.innerWidth, duration:2});
-    gsap.to(icon2, {x:window.innerWidth, duration:2});
-    gsap.to(icon3, {x:window.innerWidth, duration:2});
+    cont2.addChild(page1text3);
+    cont1.addChild(back3);
+    cont2.addChild(iarrow);
+    cont2.addChild(iarrow2);
+    cont2.addChild(iarrow3);
 
     TweenLite.set(back2, {height:window.innerHeight });
     TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
- 
-    gsap.to(icontext1, {x:window.innerWidth, duration:2});
-	gsap.to(icontext2, {x:window.innerWidth, duration:2});
-	gsap.to(icontext3, {x:window.innerWidth, duration:2});
-	
-    cont2.addChild(page1text3);
-    gsap.to(page1text3,{x:50, y:150, duration:2});
-    
-    cont1.addChild(back3);
     TweenLite.set(back2, {height:0});
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
     TweenLite.from(back3, 1, {height:0});
+ 
+    gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight, duration:1,stagger:0.5});
+    gsap.to([icon1,icon3,icon2], {y:window.innerHeight, duration:1,stagger:0.5});
+    gsap.to(page1text3,{x:50, y:150, duration:2});
     gsap.to(back3,{x:0, y:0, duration:2});
-	
-	 cont2.addChild(iarrow);
     gsap.to(iarrow,{x:window.innerWidth/2, y:100, duration:2});
-
-    cont2.addChild(iarrow2);
     gsap.to(iarrow2,{x:window.innerWidth/2, y:220, duration:2});
-
-    cont2.addChild(iarrow3);
     gsap.to(iarrow3,{x:window.innerWidth/2, y:300, duration:2});
-    
-    
 
     site = 'sub2';
     is();
     return await site ;
 };
 let iclick3 = async () =>{
- 
     console.log('iclick3');
-    gsap.to(icon1, {x:window.innerWidth, duration:2});
-    gsap.to(icon2, {x:window.innerWidth, duration:2});
-    gsap.to(icon3, {x:window.innerWidth, duration:2});
-
+    cont1.addChild(back3);
+    cont2.addChild(page1text2);
+    cont2.addChild(img2);
+    cont2.addChild(iarrow);
+    
     TweenLite.set(back2, {height:window.innerHeight });
     TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
- 
-    gsap.to(icontext1, {x:window.innerWidth, duration:2});
-	gsap.to(icontext2, {x:window.innerWidth, duration:2});
-	gsap.to(icontext3, {x:window.innerWidth, duration:2});
-	
-    cont2.addChild(page1text2);
-    gsap.to(page1text2,{x:50, y:150, duration:2});
-    cont1.addChild(back3);
     TweenLite.set(back2, {height:0});
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
     TweenLite.from(back3, 1, {height:0});
-    gsap.to(back3,{x:0, y:0, duration:2});
-	
-	cont2.addChild(img2);
-    gsap.to(img2,{x:window.innerWidth/2, y:100, duration:2});
-	
-	cont2.addChild(iarrow);
-    gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
 
-    
-   
+    gsap.to([icon1,icon3,icon2], {y:window.innerHeight, duration:1,stagger:0.5});
+    gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight, duration:1,stagger:0.5});
+	gsap.to(page1text2,{x:50, y:150, duration:2});
+    gsap.to(back3,{x:0, y:0, duration:2});
+    gsap.to(img2,{x:window.innerWidth/2, y:100, duration:2});
+    gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
 
     site = 'sub3';
     is();
@@ -340,13 +304,8 @@ let arrowback = async()=>{
     
     TweenLite.set(back2, {height:window.innerHeight});
     TweenLite.from(back2, 1, {height:0});
-
-    gsap.to(icon1, {x:50, duration:2});
-    gsap.to(icon2, {x:window.innerWidth -320, duration:2});
-    gsap.to(icon3, {x:window.innerWidth/2 -150, duration:2});
-    gsap.to(icontext1, {x:50, duration:2});
-    gsap.to(icontext2, {x:window.innerWidth -320, duration:2});
-    gsap.to(icontext3, {x:window.innerWidth/2 -150});
+    gsap.to([icon1,icon3,icon2], {y:window.innerHeight/2 -200, duration:1,stagger: 0.5});
+    gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight/2 + 80, duration:1, stagger:0.5});
     gsap.to(iarrow,{x:0, y:window.innerHeight , duration:2});
     gsap.to(iarrow2,{x:0, y:window.innerHeight , duration:2});
     gsap.to(iarrow3,{x:0, y:window.innerHeight , duration:2});
@@ -698,6 +657,7 @@ icon3.on('pointerout', ihoverout3);
 iarrow2.on('pointerdown', clickV);
 iarrow3.on('pointerdown', textup);
 iarrow.on('pointerdown', arrowback);
+iarrow.on('pointerdown', media2);
 window.addEventListener('load', resload);
 window.addEventListener('resize', res);
 app.stage.on('resize', getsite);
