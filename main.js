@@ -204,7 +204,7 @@ let click = async ()=>{
 
     gsap.to([icon1,icon3,icon2], {y:window.innerHeight/2 -200, duration:1,stagger: 0.5});
     gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight/2 + 80, duration:1, stagger:0.5});
-    gsap.to(back2,{x:0, y:0, duration:2});
+    gsap.to(back2,{x:0, y:0, duration:0.5});
 
 	site = 'main';
 	return   await site;
@@ -222,8 +222,6 @@ let iclick = async () =>{
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
     TweenLite.from(back3, 1, {height:0});
-    TweenLite.set(back2, {height:window.innerHeight });
-    TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
  
     gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight, duration:1,stagger:0.5});
     gsap.to([icon1,icon3,icon2], {y:window.innerHeight, duration:1,stagger:0.5});
@@ -247,8 +245,6 @@ let iclick2 = async() =>{
     cont2.addChild(iarrow2);
     cont2.addChild(iarrow3);
 
-    TweenLite.set(back2, {height:window.innerHeight });
-    TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
     TweenLite.set(back2, {height:0});
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
@@ -258,9 +254,9 @@ let iclick2 = async() =>{
     gsap.to([icon1,icon3,icon2], {y:window.innerHeight, duration:1,stagger:0.5});
     gsap.to(page1text3,{x:50, y:150, duration:2});
     gsap.to(back3,{x:0, y:0, duration:2});
-    gsap.to(iarrow,{x:window.innerWidth/2, y:100, duration:2});
-    gsap.to(iarrow2,{x:window.innerWidth/2, y:220, duration:2});
-    gsap.to(iarrow3,{x:window.innerWidth/2, y:300, duration:2});
+    gsap.to(iarrow,{x:window.innerWidth/2, y:100, duration:1});
+    gsap.to(iarrow2,{x:window.innerWidth/2, y:220, duration:1});
+    gsap.to(iarrow3,{x:window.innerWidth/2, y:300, duration:1});
 
     site = 'sub2';
     is();
@@ -273,8 +269,6 @@ let iclick3 = async () =>{
     cont2.addChild(img2);
     cont2.addChild(iarrow);
     
-    TweenLite.set(back2, {height:window.innerHeight });
-    TweenLite.from(back2, 1, {height:window.innerHeight/2 +300});
     TweenLite.set(back2, {height:0});
     TweenLite.from(back2, 1, {height:window.innerHeight});
     TweenLite.set(back3, {height:window.innerHeight});
