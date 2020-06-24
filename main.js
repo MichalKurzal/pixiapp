@@ -314,12 +314,12 @@ gsap.to(richText,{x : window.innerWidth /2 -200, duration:2});
 richText.y =window.innerHeight/2;
 
  let textlong = 'Hi, my name is Michal and I am a Javascript developer. ' 
-+ 'I have solid skills in javascript, typscript and many javascript frameworks like angular. '+ 
++ 'I have solid skills in Javascript, Typscript and many Javascript frameworks like Angular. '+ 
 'I have also expiriences in mobile Ionic Apps Development. '+ 
 'My Hobbies are OpenGL and WebGL ';
 
  let textlong2 =  'In my twenties I have been studying Sociolgy and Political Science at the University but I did not finish and I do not have a higher degree. ' 
-+ 'In the recent past  I have been doing professional apprentceship in the IT filed with focus on software develpment'
++ 'In the recent past  I have been doing a professional apprentceship in the IT filed with focus on software development'
 
 let textlong3 =  'Michal Kurzal \n'+ 
  'Schneider Straße 4 \n'+
