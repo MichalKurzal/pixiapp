@@ -1,6 +1,6 @@
 let app;
 try{
-    app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight, resizeTo:window ,backgroundColor:0xd9dff2 }); //create Pixi App
+    app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight, resizeTo:window ,backgroundColor:0xd9dff2 }); //Creating  Pixi App
 }
 catch{
     window.alert("Your browser does not support WebGL. Please turn on gpu hardware acceleration in your browser settings");
@@ -12,7 +12,7 @@ document.body.appendChild(app.view);
 let cont1 = new PIXI.Container();
 let cont2 = new PIXI.Container();
 
-cont1.width = window,innerWidth;
+cont1.width = window.innerWidth;
 cont1.height = window.innerHeight;
 cont2.width = window.innerWidth;
 cont2.height = window.innerHeight;
