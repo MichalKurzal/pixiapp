@@ -1,3 +1,7 @@
+let nav = navigator.userAgent;
+if (nav.match(/Android/) || nav.match(/iPhone/)){
+    window.location.replace('https://michalkurzal.github.io/mobile_portfolio/');
+} 
 let app;
 try{
     app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight, resizeTo:window ,backgroundColor:0xd9dff2 }); //Creating  Pixi App
@@ -233,7 +237,6 @@ let iclick = async () =>{
     gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
    
     site = 'sub1';
-    is();
     console.log(site);
    return await site;
 };
@@ -259,7 +262,6 @@ let iclick2 = async() =>{
     gsap.to(iarrow3,{x:window.innerWidth/2, y:300, duration:1});
 
     site = 'sub2';
-    is();
     return await site ;
 };
 let iclick3 = async () =>{
@@ -282,22 +284,20 @@ let iclick3 = async () =>{
     gsap.to(iarrow,{x:100, y:window.innerHeight - 200, duration:2});
 
     site = 'sub3';
-    is();
     return await   site;
 }
 let arrowback = async()=>{
     console.log('arrow-back');
     TweenLite.set(back3, {height:0});
     TweenLite.from(back3, 1, {height:window.innerHeight});
+    TweenLite.set(back2, {height:window.innerHeight});
+    TweenLite.from(back2, 1, {height:0});
 
     gsap.to(img1,{ y:window.innerHeight, duration:2});
 	gsap.to(img2,{ y:window.innerHeight, duration:2});
     gsap.to(page1text,{ y:window.innerHeight, duration:2});
 	gsap.to(page1text2,{ y:window.innerHeight, duration:2});
     gsap.to(page1text3,{ y:window.innerHeight, duration:2});
-    
-    TweenLite.set(back2, {height:window.innerHeight});
-    TweenLite.from(back2, 1, {height:0});
     gsap.to([icon1,icon3,icon2], {y:window.innerHeight/2 -200, duration:1,stagger: 0.5});
     gsap.to([icontext1,icontext3,icontext2], {y:window.innerHeight/2 + 80, duration:1, stagger:0.5});
     gsap.to(iarrow,{x:0, y:window.innerHeight , duration:2});
@@ -428,58 +428,6 @@ cont2.addChild(icontext1);
 cont2.addChild(icontext2);
 cont2.addChild(icontext3);
 
-let is = async() =>{
-    
-let nav = navigator.userAgent;
-if (nav.match(/Android/) && site == 'sub1'){
-            console.log('Android ' + site );
-                console.log('sub1');
-                gsap.to(img1,{x:50, y:750, duration:2});
-        }   
-         else  if (nav.match(/Android/) && site == 'sub3')
-            {
-                console.log('sub3');
-                gsap.to(img2,{x:50, y:750, duration:2});
-            }
-        
-        else if (nav.match(/iPhone/) && site == 'sub1' ){
-            console.log('Iphone');
-          
-            
-                console.log('sub1');
-                gsap.to(img1,{x:50, y:750, duration:2});
-            }
-           else  if (nav.match(/iPhone/) && site == 'sub3')
-            {
-                console.log('sub3');
-                gsap.to(img2,{x:50, y:750, duration:2});
-            }
-        
-        else if (nav.match(/iPad/) && site == 'sub1'){
-            console.log('IPad');
-       
-                console.log('sub1');
-                gsap.to(img1,{x:50, y:750, duration:2});
-            }
-            else if (nav.match(/iPad/) && site == 'sub3')
-            {
-                console.log('sub3');
-                gsap.to(img2,{x:50, y:750, duration:2});
-            }
-        else if (nav.match(/Android/))
-        {
-            icon1.off('pointerdown', media3);
-            icon3.off('pointerdown', media4);
-        }
-        else if (nav.match(/iPhone/))
-        {
-            icon1.off('pointerdown', media3);
-            icon3.off('pointerdown', media4);
-        }
-        //console.log(navigator.userAgent);
-       
-    }
-
 let resload = () =>{
     back.width = window.innerWidth;
     back.height = window.innerHeight;  
@@ -487,7 +435,6 @@ let resload = () =>{
     back.y = 0;
     back2.x =0;
     back2.y = window.innerHeight;
-is();
 }
 getsite = async()=>{
     let s = site;
@@ -520,11 +467,8 @@ function res(){
     }
     if (site == 'sub1') {
        console.log('sub1');
-    //iclick(); 
-    
    }
    
- is();
 }
 
 let scroll = (event)=>{
